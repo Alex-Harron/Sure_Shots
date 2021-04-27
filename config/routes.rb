@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
   
   resources :users
+  resources :games, only: [:index, :show]
 end
