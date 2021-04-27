@@ -14,8 +14,12 @@ class UsersController < ApplicationController
             session[:user_id] = user.id 
             redirect_to root_path
         else
-            render :new
+            redirect_to signup_path
         end
+    end
+
+    def index
+        @users = User.all 
     end
 
     private
