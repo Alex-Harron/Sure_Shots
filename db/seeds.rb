@@ -7,3 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Game.create(name: 'Mavricks V Clippers')
+Game.create(name: 'Mavricks V Nets')
+Game.create(name: 'Mavricks V Lakers')
+Game.create(name: 'Mavricks V Nuggets')
+Game.create(name: 'Mavricks V Heat')
+Game.create(name: 'Mavricks V Magic')
