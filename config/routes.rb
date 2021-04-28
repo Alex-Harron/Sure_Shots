@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   
   resources :users
   resources :games, only: [:show, :index]
+  resources :games do 
+    resources :donations, shallow: true
+  end
 
   root 'sessions#home'
   get '/signup', to: 'users#new'

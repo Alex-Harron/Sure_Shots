@@ -18,4 +18,49 @@ class BetsController < ApplicationController
             @bet.build_game
         end
     end
+
+    def create
+        if params[:game_id]
+            @game = Game.find_by(id: params[:game_id])
+            @bet = @game.bets.build(bet_params)
+        else
+            @bet = Bet.new(bet_params)
+        end
+
+        if @bets.save
+            redirect_to game_bets_path(@bet.game)
+        else 
+            render :new
+        end
+    end
+
+    def show
+    end
+
+    def edit
+    end
+
+    def update
+        if @bet.update(bet_params)
+            redirect_to bet_path(@bet)
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        @bet.destroy
+        redirect_to game_bets_path
+    end
+
+    private
+
+    def bet_params
+        params.require(:bet).permit(:amount, :date, :game_id)
+    end
+
+    def set_bet
+        @bet = Bet.find_by_id(params[:id])
+    end
+
 end
