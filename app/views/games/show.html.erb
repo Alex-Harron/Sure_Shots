@@ -1,5 +1,9 @@
+<h1> Place Your Bets, and Win BIG!!! </h1>
+
 <% if @game %>
     <%= render partial: "game", locals: {game: @game} %>
+
+    <%= button_to 'Return to all Games', games_path %>
 <% else %>
     <h2>404</h2><h3>Not Found</h3>
 <% end %>

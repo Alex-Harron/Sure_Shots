@@ -11,4 +11,5 @@ Game.create(name: 'Mavricks V Nets')
 Game.create(name: 'Mavricks V Lakers')
 Game.create(name: 'Mavricks V Nuggets')
 Game.create(name: 'Mavricks V Heat')
-Game.create(name: 'Mavricks V Magic')
+Game.create(name: 'Mavricks V Magic', visitor_img: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Dallas_Mavericks_logo.svg/1200px-Dallas_Mavericks_logo.svg.png', home_img: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/10/Orlando_Magic_logo.svg/1024px-Orlando_Magic_logo.svg.png')
+

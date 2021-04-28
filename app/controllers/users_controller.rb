@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+    layout "application"
     def new 
         if !logged_in?
             @user = User.new
