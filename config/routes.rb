@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   
   resources :users
-  resources :games, only: [:show, :index]
-  resources :games do 
-    resources :donations, shallow: true
+  resources :games, only: [:show, :index] do 
+    resources :bets, shallow: true
   end
 
   root 'sessions#home'
