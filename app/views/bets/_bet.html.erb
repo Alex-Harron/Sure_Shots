@@ -1,0 +1,7 @@
+
+    <p>Amount: <%= @bet.amount %>
+    Date: <%= @bet.date.strftime("%m-%e-%y %H:%M") %>
+    <% if @bet.game %> 
+        Game: <%= @bet.game.name %>
+    <% end %>
+</p>

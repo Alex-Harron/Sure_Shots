@@ -3,7 +3,7 @@ class BetsController < ApplicationController
 
     def index
         if params[:game_id] && @game = Game.find_by(id: params[:game_id])
-            @bet = @game.bets 
+            @bets = @game.bets 
         else
             @bets = Bet.all
         end
@@ -27,7 +27,7 @@ class BetsController < ApplicationController
             @bet = Bet.new(bet_params)
         end
 
-        if @bets.save
+        if @bet.save
             redirect_to game_bets_path(@bet.game)
         else 
             render :new

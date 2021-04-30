@@ -1,0 +1,5 @@
+<h1><%= "Place a New Bet on #{@game.name}" %></h1>
+
+<%= render partial: 'form', locals: {in_partial: @bet} %>
+<br>
+<%= button_to 'Return to all Games', games_path %>

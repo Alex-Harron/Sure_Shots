@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :games, only: [:show, :index] do 
-    resources :bets, shallow: true
+    resources :bets
   end
 
   root 'sessions#home'

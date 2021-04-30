@@ -1,9 +1,14 @@
-<h1> Place Your Bets, and Win BIG!!! </h1>
 
 <% if @game %>
+<h1> Place Your Bets, and Win BIG!!! </h1>
+
     <%= render partial: "game", locals: {game: @game} %>
+    <%= link_to 'See all the current bets on this Game', game_bets_path(@game) %>
 
     <%= button_to 'Return to all Games', games_path %>
+
 <% else %>
     <h2>404</h2><h3>Not Found</h3>
+
+    <%= button_to 'Return to all Games', games_path %>
 <% end %>

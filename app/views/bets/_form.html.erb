@@ -1,0 +1,9 @@
+<%= form_for ([@game, @bet]) do |f| %>
+
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+    <%= f.label :date %>
+    <%= f.datetime_field :date %>
+    <%= f.submit %> 
+<% end %> 
+
