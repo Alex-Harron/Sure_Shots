@@ -2,13 +2,14 @@
     <h1> <%= @game.name %></h1>
     <h1> All Bets </h1>
 
-    
-    
+    <% @bets.each do |b| %>
+       <li> <%= b.amount %> - <%= b.date %> </li>
+    <% end %> 
+    <br></br>
     <% if logged_in? %>
     <%= link_to "Place a New Bet!", new_game_bet_path %>
-    <% @game.bets.each do |g| %>
-        <li><%= g.amount - g.date %></li>
-    <% end %> 
+    <br><br>
+    <%= link_to "return to Games", games_path %> 
     <% end %>
 
 

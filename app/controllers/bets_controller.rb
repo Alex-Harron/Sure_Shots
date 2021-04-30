@@ -30,11 +30,12 @@ class BetsController < ApplicationController
         if @bet.save
             redirect_to game_bets_path(@bet.game)
         else 
-            render :new
+            redirect_to login_path
         end
     end
 
     def show
+        @bet = Bet.find_by(id: params[:id])
     end
 
     def edit
