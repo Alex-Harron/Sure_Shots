@@ -30,7 +30,7 @@ class BetsController < ApplicationController
         if @bet.save
             redirect_to game_bets_path(@bet.game)
         else 
-            redirect_to login_path
+            render :new
         end
     end
 

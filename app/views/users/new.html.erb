@@ -1,4 +1,9 @@
 <h1> Make an Account Here: </h1>
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |message|%>
+     <h3><%= message %> </h3>
+  <%end%>
+<%end%>
 
 <%= form_with model: @user do |f| %>
     <%= f.label :email %> 
