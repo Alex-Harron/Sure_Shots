@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
 
   post '/games', to: 'games#index'
+
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
   
 end

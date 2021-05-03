@@ -28,4 +28,13 @@ class SessionsController < ApplicationController
         session.delete :user_id
         redirect_to login_path
     end
+
+    def omniauth 
+        user = User.find_or_create_by(uid: requiest.env['omniauth.auth'][:uid], provider:requiest.env['omniauth.auth'][:provider]) do |u|
+            u.username = requiest.env['omniauth.auth'][:info][:first_name]
+            u.email = requiest.env['omniauth.auth'][:info][:email]
+            u.photo = requiest.env['omniauth.auth'][:info][:image]
+            u.password = SecureRandom.hex(20)
+        end
+    end
 end
