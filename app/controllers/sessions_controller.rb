@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id 
             redirect_to root_path
         else
+            @errors = ["The Username or Password is Incorrect."]
             render :new
         end
     end
