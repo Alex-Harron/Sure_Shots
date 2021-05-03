@@ -9,5 +9,13 @@ class User < ApplicationRecord
     validates :password, length: { in: 5..12 }
     
     validates :email, presence: true, uniqueness: true
+    validate :correct_email
+
+
+    def correct_email
+        if !email.match(/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i)
+            errors.add(:email, "The email entered does not exist, please try again.")
+        end 
+    end
 
 end 
