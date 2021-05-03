@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  
-  resources :users
-  resources :games, only: [:show, :index] do 
-    resources :bets
-  end
-
   root 'sessions#home'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -14,6 +8,10 @@ Rails.application.routes.draw do
 
   post '/games', to: 'games#index'
 
-  get '/auth/:provider/callback', to: 'sessions#omniauth'
-  
+  get '/auth/:provider/callback' => 'sessions#omniauth'
+
+  resources :users
+  resources :games, only: [:show, :index] do 
+    resources :bets
+  end
 end
