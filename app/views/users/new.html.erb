@@ -1,10 +1,15 @@
-<h1> Make an Account Here: </h1>
+<center><h1> Signup Here: </h1></center>
+<br><br>
+<center><div><h2><center>Contiune with <%= button_to 'Google', '/auth/google_oauth2' %></h2></div>
 <% if @user.errors.any? %>
   <% @user.errors.full_messages.each do |message|%>
      <h3><%= message %> </h3>
   <%end%>
 <%end%>
-
+<br>
+<hr size="1" width="60%" color="black">
+or
+<br><br>
 <%= form_with model: @user do |f| %>
     <%= f.label :email %> 
     <%= f.text_field :email %>
@@ -14,9 +19,24 @@
     <br></br>
     <%= f.label :password %>
     <%= f.password_field :password %>
-    <%= f.submit 'Create Your Account' %>
+    <br><br>
+    <%= f.submit 'Create Your Account' %></div>
 <% end %> 
 <br>
-<h3> Login with Google:</h3>
-<%= button_to 'Google', '/auth/google_oauth2' %>
-<%= link_to "Login Here:", login_path %> 
+Already have an Account?
+<br>
+<%= button_to "Login", login_path %> 
+
+
+
+
+
+<style type="text/css"> 
+div {
+  width: 300px;
+  padding: 0;
+  border: 2px solid red;
+  margin: 0;
+  background-color:red;
+}
+</style>

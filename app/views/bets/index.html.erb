@@ -1,4 +1,5 @@
-<center><h1> <%= @game.name %></h1></center>
+<center><h1> <%= @game.name %></h1>
+<br><br>
 <h1> All Bets </h1>
 
     <% @bets.each do |b| %>
@@ -6,9 +7,9 @@
     <% end %> 
     <br></br>
     <% if logged_in? %>
-       <center> <%= link_to "Place a New Bet!", new_game_bet_path %>
+        <%= link_to "Place a New Bet!", new_game_bet_path %>
         <br><br>
-        <%= link_to "Return to Games", games_path %> </center>
+        <%= link_to "Return to Games", games_path %> 
     <% end %>
 
 <%= render partial: "bet", collection: @bets %> 

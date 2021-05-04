@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    layout "application"
+    layout "main"
     def home
         if !logged_in?
             redirect_to login_path
