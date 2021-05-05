@@ -9,7 +9,7 @@
       <center><h2><i class=></i>Login:</h2></center>
     </div>
     <% @errors && @errors.each do |e|%>
-        <%= e %>
+        <div class="w3-red"><center><%= e %></center></div>
     <%end%>
     <div class="w3-container w3-white w3-padding-16">
         <%= form_with url: login_path do |f| %>
@@ -29,13 +29,13 @@
                 <br><br>
                 </div>
                 <br><br>
-                Not a member yet? <%= link_to "Create Account", signup_path %> 
+                Not a member yet? <b><%= link_to "Create Account", signup_path %></b>
             </div>   
         </div>
         <% end %>
         <div class="separator"> Or </div>
     
-        <p>Login with: <%= button_to "Google", '/auth/google_oauth2', class:"w3-button w3-red" %></p>
+        <p><b>Login with: </b><%= button_to "Google", '/auth/google_oauth2', class:"w3-button w3-red" %></p>
         </div>
     </div>
 </div>
