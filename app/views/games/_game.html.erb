@@ -1,4 +1,17 @@
-<p><img src= "<%= game.home_img %>" style="width:125px;height:100px;"><br><br><%= game.home %></p>
-<br>
-<p> <img src= "<%= game.visitor_img %>" style="width:125px;height:100px;"><br><br> <%= game.visitor %></p>
+<div class="w3-container">
+    <h3>Betting Odds</h3>
+    <p><b>Home:  <%= game.home %><b></p>
+    <div class="w3-grey">
+      <div class="w3-container w3-center w3-padding w3-red" style="width:25%">+25%</div>
+    </div>
+<center><p><img src= "<%= game.home_img %>" style="width:120px;height:100px;"><br><br></p></center>
 
+<p>Away:  <%= game.visitor %></p>
+    <div class="w3-grey">
+      <div class="w3-container w3-center w3-padding w3-green" style="width:50%">50%</div>
+    </div>
+</div>
+<center><p><img src= "<%= game.visitor_img %>" style="width:120px;height:100px;"><br><br></p></center>
+
+
+    
