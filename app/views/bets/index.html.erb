@@ -1,19 +1,29 @@
-<center><h1> <%= @game.name %></h1>
-<br><br>
-<h1> All Bets </h1>
-
-    <% @bets.each do |b| %>
-       <li> <%= b.amount %> - <%= b.date %> </li>
-    <% end %> 
-    <br></br>
-    <% if logged_in? %>
-        <%= link_to "Place a New Bet!", new_game_bet_path %>
-        <br><br>
-        <%= link_to "Return to Games", games_path %> 
-    <% end %>
-
-<%= render partial: "bet", collection: @bets %> 
-
-
+<center><h1><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;">All Current Bets For This Game <img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"></h1></center>
+<br><br> 
+<br><br> 
+<br><br><br><br><br>
+<br><br><br>
+<br><br> 
+<header class="w3-display-container w3-content" style="max-width:1500px;">
+    <center><div class="w3-display-left w3-padding w3-col l6 m8"></center>
+        <div class="w3-display-left w3-padding w3-col l6 m8">
+            <div class="w3-container w3-green">
+                <center><h2><i class=></i><%= @game.name %></h2></center>
+            </div>
+            <div class="w3-container w3-white w3-padding-16">
+                <% @bets.each do |b| %>
+                    <li> $ <%= b.amount %> - </li>
+                <% end %>
+                <br></br>
+                <% if logged_in? %>
+                    <%= link_to "Place a New Bet!", new_game_bet_path %>
+                    <br><br>
+                    <%= link_to "Return to Games", games_path %>
+                <% end %>
+                <%= render partial: "bet", collection: @bets %> 
+            </div>
+        </div>
+    </div>
+</header>
 
  

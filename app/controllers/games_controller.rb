@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-   
+   layout 'main'
     def index 
         @games = Game.abc
     end

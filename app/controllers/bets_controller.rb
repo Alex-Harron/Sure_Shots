@@ -1,16 +1,19 @@
 class BetsController < ApplicationController
+    before_action (:current_user)
     before_action :set_bet, except: [:index, :new, :create]
     layout 'main'
 
     def index
+        not_logged_in
         if params[:game_id] && @game = Game.find_by(id: params[:game_id])
-            @bets = @game.bets 
+            @bets = @game.bets
         else
-            @bets = Bet.all
+            render :index
         end
     end
 
-    def new 
+    def new
+        not_logged_in
         if params[:game_id]
             @game = Game.find_by(id: params[:game_id])
             @bet = @game.bets.build
@@ -21,14 +24,17 @@ class BetsController < ApplicationController
     end
 
     def create
+        not_logged_in
         if params[:game_id]
             @game = Game.find_by(id: params[:game_id])
             @bet = @game.bets.build(bet_params)
+            @bet.user_id = session[:user_id]
         else
             @bet = Bet.new(bet_params)
         end
 
         if @bet.save
+            
             redirect_to game_bets_path(@bet.game)
         else 
             render :new
