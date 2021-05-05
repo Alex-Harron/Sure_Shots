@@ -1,42 +1,69 @@
-<center><h1> Signup Here: </h1></center>
+<center><h1><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;">Create an Account <img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"></h1></center>
 <br><br>
-<center><div><h2><center>Contiune with <%= button_to 'Google', '/auth/google_oauth2' %></h2></div>
-<% if @user.errors.any? %>
-  <% @user.errors.full_messages.each do |message|%>
-     <h3><%= message %> </h3>
-  <%end%>
-<%end%>
-<br>
-<hr size="1" width="60%" color="black">
-or
 <br><br>
-<%= form_with model: @user do |f| %>
-    <%= f.label :email %> 
-    <%= f.text_field :email %>
-    <br></br>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <br></br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br><br>
-    <%= f.submit 'Create Your Account' %></div>
-<% end %> 
-<br>
-Already have an Account?
-<br>
-<%= button_to "Login", login_path %> 
+<header class="w3-display-container w3-content" style="max-width:800px;">
+  <center><div class="w3-display-left w3-padding w3-col l6 m8"></center>
+    <div class="w3-container w3-black">
+      <center><h2><i class=></i>New Account:</h2></center>
+    </div>
+    <% @errors && @errors.each do |e|%>
+    <div class="w3-red"><center><%= e %></center></div>
+    <%end%>
+    <div class="w3-container w3-white w3-padding-16">
+      <%= form_with model: @user do |f| %>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label><i class=><%= f.label :username %></i></label>
+            <input class="w3-input w3-border" <%= f.text_field :username %>
+          </div>
+          <div class="w3-half">
+            <label><i class=><%= f.label :email %></i></label>   
+            <input class="w3-input w3-border" <%= f.text_field :email %>
+          </div>
+          <div class="w3-half w3-margin-bottom">
+            <label><i class=><%= f.label :password %></i></label>   
+            <input class="w3-input w3-border" <%= f.password_field :password %>
+          </div>
+          <div class="w3-row-padding" style="margin:-15px -16px;">
+            <div class="w3-half w3-margin-bottom">
+              <br>
+              <button class="w3-button w3-green"<%= f.submit 'Log in' %> Sign Up </button>
+              <br><br>
+            </div>
+          </div>
+          <br><br>
+          Already a member? <b><%= link_to "Login Here", login_path %></b>
+        </div>
+      <% end %>
+      <div class="separator"> Or </div>
+      <br>
+      <h3><center><%= button_to "Continue with Google" , '/auth/google_oauth2', class:"w3-button w3-red w3-container" %></h3>
+    </div>
+  </div>
+</header>
 
 
 
 
+<style>
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
 
-<style type="text/css"> 
-div {
-  width: 300px;
-  padding: 0;
-  border: 2px solid red;
-  margin: 0;
-  background-color:red;
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid grey;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
 }
 </style>

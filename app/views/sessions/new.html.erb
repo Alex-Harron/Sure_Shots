@@ -1,44 +1,43 @@
-<center><h1><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;">Memebers Sign In Here <img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"></h1></center>
+<center><h1><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;">Members Sign In Here <img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"></h1></center>
 <br><br>
 <br><br>
-
 
 <header class="w3-display-container w3-content" style="max-width:800px;">
-  <center><div class="w3-display-left w3-padding w3-col l6 m8"></center>
-    <div class="w3-container w3-black">
-      <center><h2><i class=></i>Login:</h2></center>
-    </div>
-    <% @errors && @errors.each do |e|%>
+    <center><div class="w3-display-left w3-padding w3-col l6 m8"></center>
+        <div class="w3-container w3-black">
+            <center><h2><i class=></i>Login:</h2></center>
+        </div>
+        <% @errors && @errors.each do |e|%>
         <div class="w3-red"><center><%= e %></center></div>
-    <%end%>
-    <div class="w3-container w3-white w3-padding-16">
-        <%= form_with url: login_path do |f| %>
-            <div class="w3-row-padding" style="margin:0 -16px;">
-                <div class="w3-half w3-margin-bottom">
-                    <label><i class=></i></label>
-                    <%= f.label :username %>
-                    <input class="w3-input w3-border" <%= f.text_field :username %>
-                        <div class="w3-half">
-                            <label><i class=></i></label>
-                            <%= f.label :password %>
-                            <input class="w3-input w3-border" <%= f.password_field :password %>
-                        </div>
+        <%end%>
+        <div class="w3-container w3-white w3-padding-16">
+            <%= form_with url: login_path do |f| %>
+                <div class="w3-row-padding" style="margin:0 -16px;">
+                    <div class="w3-half w3-margin-bottom">
+                        <label><i class=><%= f.label :username %></i></label>
+                        <input class="w3-input w3-border" <%= f.text_field :username %>
+                    </div>
                     <div class="w3-half">
-                        <br>
-                        <button class="w3-button w3-green"<%= f.submit 'Log in' %> Sign In </button>
-                        <br><br>
+                        <label><i class=><%= f.label :password %></i></label>   
+                        <input class="w3-input w3-border" <%= f.password_field :password %>
+                    </div>
+                    <div class="w3-row-padding" style="margin:-15px -16px;">
+                        <div class="w3-half w3-margin-bottom">
+                            <br>
+                            <button class="w3-button w3-green"<%= f.submit 'Log in' %> Sign In </button>
+                            <br><br>
+                        </div>
                     </div>
                     <br><br>
                     Not a member yet? <b><%= link_to "Create Account", signup_path %></b>
-                </div>   
-            </div>
-        <% end %>
-        <div class="separator"> Or </div>
-        <br>
+                </div>
+            <% end %>
+            <div class="separator"> Or </div>
+            <br>
             <h3><center><%= button_to "Continue with Google" , '/auth/google_oauth2', class:"w3-button w3-red w3-container" %></h3>
         </div>
     </div>
-</div>
+</header>
 
 
 

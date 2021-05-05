@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-    
+    layout "main"
+
     def new 
         if !logged_in?
             @user = User.new
@@ -14,7 +15,8 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id 
             redirect_to root_path
         else
-            render :new 
+            @errors = @user.errors.full_messages
+            render :new
         end
     end
 
