@@ -1,7 +1,9 @@
-<h1> Hi  <%= @current_user.username %></h1>
+<h1> Hi <%= current_user.username %> </h1>
 
-<% @users.each do |user| %>
+<% current_user.bets.each do |bet| %>
     <p>
-    <%= user.username %>
+    <%= bet.amount %>
     </p>
     <% end %>
+
+   
