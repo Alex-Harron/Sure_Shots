@@ -1,9 +1,9 @@
-<center><h1> Welcome to Your Bet History <%= current_user.username %> </h1></center>
+<center><h1><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"> All the Users of Sure Shots <img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"></h1></center>
 
-<% current_user.bets.each do |bet| %>
-    <p>
-    <%= bet.amount %>
-    </p>
+
+ <% if logged_in? %>
+    <% @users.each do |g| %>
+        <li><%= g.username %></li>
+    
     <% end %>
-
-   
+<% end %>

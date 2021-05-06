@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#omniauth'
 
   resources :users
+
   resources :bets, only: [:index, :new, :create]
   resources :games, only: [:show, :index] do 
     resources :bets

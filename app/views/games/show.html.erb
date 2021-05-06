@@ -5,8 +5,7 @@
 
     <%= render partial: "game", locals: {game: @game} %>
 
-    <center><%= link_to 'See all the current bets on this Game', game_bets_path(@game) %>
-    <br><br>
+    <center><%= button_to 'See all the current bets on this Game', game_bets_path(@game), class:"w3-button w3-green w3-container" %>
     <h3><center><%= button_to "Return to All Games" , games_path, class:"w3-button w3-black w3-container" %></h3>
 <% else %>
     <h2>404</h2><h3>Not Found</h3>

@@ -8,11 +8,12 @@
     <center><div class="w3-display-left w3-padding w3-col l6 m8"></center>
         <div class="w3-display-left w3-padding w3-col l6 m8">
             <div class="w3-container w3-green">
-                <center><h2><i class=></i><%= @game.name %></h2></center>
+            <center><h2><i class=></i><%= @game.name %></h2></center>
             </div>
             <div class="w3-container w3-white w3-padding-16">
+            
                 <% @bets.each do |b| %>
-                    <li> $ <%= b.amount %> - </li>
+                    <li> $ <%= b.amount %> </li>
                 <% end %>
                 <br></br>
                 <% if logged_in? %>

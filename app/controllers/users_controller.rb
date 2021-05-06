@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    layout "welcome"
+    layout "main"
 
     def new 
         if !logged_in?
@@ -20,9 +20,20 @@ class UsersController < ApplicationController
         end
     end
 
+    def show
+        if current_user
+            @user = current_user
+            render :show 
+        else
+            redirect_to root_path
+        end
+    end
+
     def index
         @users = User.all 
     end
+
+ 
 
     private
 
