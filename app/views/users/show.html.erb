@@ -1,1 +1,5 @@
+<% if !current_user %>
+    <% redirect_to root_path %>
+<% else %> 
 <%= render partial: "user", locals: {user: current_user} %>
+<% end %> 

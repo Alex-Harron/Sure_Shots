@@ -1,4 +1,8 @@
 <h1>Current Bet</h1>
 
-<%= @bet.amount %> - <%= @bet.date %> 
+<% current_user.bets.each do |bet| %>
+    <p>
+    <%= bet.amount %> - <%= bet.game.name %> 
+    </p>
+<% end %> 
 

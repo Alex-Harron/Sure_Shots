@@ -11,9 +11,8 @@
             <center><h2><i class=></i><%= @game.name %></h2></center>
             </div>
             <div class="w3-container w3-white w3-padding-16">
-            
                 <% @bets.each do |b| %>
-                    <li> $ <%= b.amount %> </li>
+                    <li>$ <%= b.amount %> - <%= b.user.username %> </li>
                 <% end %>
                 <br></br>
                 <% if logged_in? %>

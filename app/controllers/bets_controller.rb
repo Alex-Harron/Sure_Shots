@@ -1,5 +1,5 @@
 class BetsController < ApplicationController
-    before_action (:current_user)
+    before_action (:not_logged_in)
     before_action :set_bet, except: [:index, :new, :create]
     layout 'main'
 
@@ -42,7 +42,6 @@ class BetsController < ApplicationController
     end
 
     def show
-        @bet = Bet.find_by(id: params[:id])
     end
 
     def edit
