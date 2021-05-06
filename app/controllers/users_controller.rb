@@ -5,7 +5,7 @@ class UsersController < ApplicationController
         if !logged_in?
             @user = User.new
         else
-            redirect_to root_path
+            redirect_to user_path(current_user)
         end
     end
 
@@ -21,12 +21,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        if current_user
-            @user = current_user
-            render :show 
-        else
-            redirect_to root_path
-        end
+        @user = User.find_by(id: params[:id])
     end
 
     def index
