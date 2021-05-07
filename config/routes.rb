@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   post '/games', to: 'games#index'
+  
 
   get '/auth/:provider/callback' => 'sessions#omniauth'
 
