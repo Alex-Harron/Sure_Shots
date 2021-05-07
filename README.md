@@ -1,24 +1,16 @@
-# README
+<h2>Installing</h2>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Clone the code of this repo. In your terminal:
 
-Things you may want to cover:
+<code>git clone "github-repo-code"</code>
 
-* Ruby version
+Go to the first level directory that contains all of this repo's folders:
 
-* System dependencies
+<code>bundle install (this installs any required gems)</code>
 
-* Configuration
+In your terminal start the server: 
 
-* Database creation
+<code>rails s</code>
 
-* Database initialization
+Lastly, vist http://localhost:3000/. 
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
