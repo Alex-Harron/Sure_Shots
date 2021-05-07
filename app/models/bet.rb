@@ -4,4 +4,6 @@ class Bet < ApplicationRecord
     has_many :teams, through: :games
 
     validates :amount, presence: true
+    
+
 end
