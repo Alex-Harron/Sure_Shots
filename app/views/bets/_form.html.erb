@@ -5,12 +5,11 @@
 <%end%>
 
 <%= form_for ([@game, @bet]) do |f| %>
-
     <%= f.label :amount %>
     <%= f.number_field :amount %>
     <%= f.label :date %>
     <%= f.date_field :date %>
-   
-    <%= f.submit %> 
+    <%= f.select :winner, ["#{@game.home}", "#{@game.visitor}"], :selected => f.object.winner %>
+    <%= f.submit 'Place Bet' %> 
 <% end %> 
 

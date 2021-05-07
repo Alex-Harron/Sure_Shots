@@ -1,25 +1,28 @@
-<center><h1><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;">All Current Games<img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"></h1></center>
+<center><h1><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;">Games for Today<img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"></h1></center>
 <br><br> 
 <br><br> 
-<br><br>
-<center><header class="w3-display-container w3-content" style="max-width:1200px;"></center>
-    <center><div class="w3-display-left w3-padding w3-col l6 m8"></center>
-        <div class="w3-display-left w3-padding w3-col l6 m8">
-            <div class="w3-container w3-green">
-                <center><h2><i class=>Click on a Game to Place a Bet</i></h2></center>
-            </div>
-            <div class="w3-container w3-white w3-padding-16">
-            <% @games.each do |g| %>
-                <li><%= link_to g.name, game_path(g) %></li>
-            <% end %> 
-                <br></br>
-            <%= link_to "Return to Homepage", root_path  %>
-            </div>
-        </div>
+<div class="w3-row-padding w3-padding-16 ">
+    <div class="w3-third w3-margin-bottom">
+      <center><img src="https://lh3.googleusercontent.com/proxy/wuiEFd0MPLs-BmWf0RYx7GMUmjYhEom-MZKBQiNlzcHRTewN6H8Tb-wrVhY1dD-U1cG6OWgvalweBWk2574skWjAJhuV6UUqieRjeS2QZOJEnA2ZsexL" style="width:80%"></center>
     </div>
-</header>
-
-
+    <div class="w3-third w3-margin-bottom">
+      
+      <div class="w3-container w3-black w3-round w3-card">
+        <center><h3>Select a Game to Continue</h3></center>
+        <h6 class="w3-opacity">
+        <% @games.each do |g| %>
+          <center><p><%= link_to g.name, game_path(g) %></p></center>
+        <% end %></h6>
+        <p></p>
+        <button class="w3-button w3-block w3-green w3-margin-bottom w3-round w3-card"><%= link_to "Return to Homepage", root_path  %></button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+    <center><img src="https://lh3.googleusercontent.com/proxy/wuiEFd0MPLs-BmWf0RYx7GMUmjYhEom-MZKBQiNlzcHRTewN6H8Tb-wrVhY1dD-U1cG6OWgvalweBWk2574skWjAJhuV6UUqieRjeS2QZOJEnA2ZsexL" style="width:80%"></center>
+    </div>
+    </div>
+  </div>
+  
 
 
 

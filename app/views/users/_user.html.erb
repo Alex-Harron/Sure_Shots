@@ -1,9 +1,6 @@
-<center><h1><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"> Welcome to Your Bet History <%= user.username %> <img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"></h1></center>
 <% if current_user %> 
     <% user.bets.each do |bet| %>
-        <p>
-        <%= bet.amount %> - <%= bet.game.name %> 
-        </p>
+        <p><%= bet.amount %> - <%= bet.winner %></p> 
     <% end %> 
 <% else %> 
     <% redirect_to root_path %>

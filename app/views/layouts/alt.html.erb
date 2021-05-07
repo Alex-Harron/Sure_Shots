@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sure Shots</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+
+</style>
+<body class="w3-sand">
+
+<%if logged_in? %>
+<div class="w3-bar w3-green w3-large">
+  <a href="<%= root_path %>" class="w3-bar-item w3-button w3-green w3-mobile"><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:25px;height:30px;"></a>
+  <a href="<%= games_path %>" class="w3-bar-item w3-button w3-mobile">Games</a>
+  <a href="<%= users_path %>" class="w3-bar-item w3-button w3-mobile">Users</a>
+  <a href="<%= user_path(current_user) %>" class="w3-bar-item w3-button w3-mobile">Account</a>
+  <a href="<%= logout_path %>" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile">Logout</a>
+</div>
+<% end %>
+
+<%= yield %> 
+
+
+</body>
+</html>

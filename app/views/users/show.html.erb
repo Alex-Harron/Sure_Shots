@@ -1,6 +1,18 @@
-<% if @user %>
-    <%= render partial: "user", locals: {user: current_user} %>
-<% else %> 
-<h2></h2><h3>This User's Page is Private or Does not Exist</h3>
-<%= link_to "Return to Homepage", root_path  %>
-<% end %> 
+
+<div class="w3-row-padding" id="about">
+    <div class="w3-col l4 12">
+    <% if @user %>
+    <h3><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"> Welcome to Your Bet History <%= @user.username %> <img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"></h3>
+    <h4><%= render partial: "user", locals: {user: current_user} %></h4>
+    <center><p><%= link_to "Return to Homepage", root_path  %></i></p></center>
+  <% else %> 
+  <h3>This User's Page is Private or Does not Exist</h3>
+  <p><%= link_to "Return to Homepage", root_path  %></i></p>
+  <% end %>
+    </div>
+    <div class="w3-col l8 12">
+    <img src="https://lh3.googleusercontent.com/proxy/wuiEFd0MPLs-BmWf0RYx7GMUmjYhEom-MZKBQiNlzcHRTewN6H8Tb-wrVhY1dD-U1cG6OWgvalweBWk2574skWjAJhuV6UUqieRjeS2QZOJEnA2ZsexL" style="width:30%;">
+    </div>
+  </div>
+</div>
+
