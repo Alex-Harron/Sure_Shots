@@ -1,15 +1,33 @@
-<% if @bet.errors.any? %>
-  <% @bet.errors.full_messages.each do |message|%>
-     <h3><%= message %> </h3>
-  <%end%>
-<%end%>
 
-<%= form_for ([@game, @bet]) do |f| %>
-    <%= f.label :amount %>
-    <%= f.number_field :amount %>
-    <%= f.label :date %>
-    <%= f.date_field :date %>
-    <%= f.select :winner, ["#{@game.home}", "#{@game.visitor}"], :selected => f.object.winner %>
-    <%= f.submit 'Place Bet' %> 
-<% end %> 
 
+
+
+<div class="w3-row-padding w3-padding-16 ">
+    <div class="w3-third w3-margin-bottom">
+      <center><img src="https://lh3.googleusercontent.com/proxy/vyOickWYZQomjZ6lL37xzqC9gjKyxYv458do0gt3AKCSpMOaaSeryFFNT-1ZJCjGvKTDnTykMQlhB2fBT_je_z32TBrJbBLBKi2SB_iODpzMxLjeX8w" style="width:80%"></center>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      
+      <div class="w3-container w3-black w3-round w3-card">
+        <center><h3>Place Bet</h3></center>
+        <% if @bet.errors.any? %>
+          <% @bet.errors.full_messages.each do |e|%>
+            <div class="w3-red w3-round w3-card"><center><%= e %></center></div>
+          <%end%>
+        <%end%>
+        <h6 class="">
+        <%= form_for ([@game, @bet]) do |f| %>
+          <%= f.label :amount %>
+          <input class=" w3-border w3-round w3-card" <%= f.number_field :amount %>
+          <%= f.select :winner, ["#{@game.home}", "#{@game.visitor}"], :selected => f.object.winner %>
+          <br><br>
+          <input class="w3-button w3-input w3-border w3-round w3-card w3-green"<%= f.submit 'Place Bet' %> 
+        <% end %> 
+        <p></p>
+        <button class="w3-button w3-block w3-green w3-margin-bottom w3-round w3-card"><%= link_to "Return to Homepage", root_path  %></button>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+  

@@ -1,5 +1,4 @@
-<h1><%= "Place a New Bet on #{@game.name}" %></h1>
-
+<center><h1><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;">Place a Bet on <%= @game.name %><img src="https://freepngimg.com/thumb/diamond/28497-6-diamond-logo.png" style="width:50px;height:60px;"></h1></center>
+<br><br> 
+<br><br> 
 <p><%= render partial: 'form', locals: {in_partial: @bet} %></p>
-<br>
-<%= button_to 'Return to All Games', games_path %>
