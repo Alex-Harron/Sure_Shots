@@ -1,6 +1,6 @@
 <% if current_user %> 
     <% user.bets.each do |bet| %>
-        <p><%= bet.amount %> - <%= bet.winner %></p> 
+        <p>$<%= bet.amount %> - <%= bet.winner %></p> 
     <% end %> 
 <% else %> 
     <% redirect_to root_path %>
