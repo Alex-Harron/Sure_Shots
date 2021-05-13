@@ -18,11 +18,11 @@
                 <div class="w3-row-padding" style="margin:0 -16px;">
                     <div class="w3-half w3-margin-bottom">
                         <label><i class=><%= f.label :username %></i></label>
-                        <input class="w3-input w3-border w3-round w3-card" <%= f.text_field :username %>
+                        <%= f.text_field :username, placeholder: "Username", class:"w3-input w3-border w3-round w3-card" %>
                     </div>
                     <div class="w3-half">
                         <label><i class=><%= f.label :password %></i></label>   
-                        <input class="w3-input w3-border w3-round w3-card" <%= f.password_field :password %>
+                        <%= f.password_field :password, placeholder: "Password", class:"w3-input w3-border w3-round w3-card" %>
                     </div>
                     <div class="w3-row-padding" style="margin:-15px -16px;">
                         <div class="w3-half w3-margin-bottom">

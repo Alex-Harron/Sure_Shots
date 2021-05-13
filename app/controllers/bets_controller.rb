@@ -4,7 +4,6 @@ class BetsController < ApplicationController
     layout 'main'
 
     def index
-        not_logged_in
         if params[:game_id] && @game = Game.find_by(id: params[:game_id])
             @bets = @game.bets
         else
@@ -13,7 +12,6 @@ class BetsController < ApplicationController
     end
 
     def new
-        not_logged_in
         if params[:game_id]
             @game = Game.find_by(id: params[:game_id])
             @bet = @game.bets.build
@@ -24,7 +22,6 @@ class BetsController < ApplicationController
     end
 
     def create
-        not_logged_in
         if params[:game_id]
             @game = Game.find_by(id: params[:game_id])
             @bet = @game.bets.build(bet_params)

@@ -13,19 +13,19 @@
     <div class="w3-red w3-round w3-card"><center><%= e %></center></div>
     <%end%>
     <div class="w3-container w3-light-grey w3-padding-16 w3-round w3-card">
-      <%= form_with model: User.new do |f| %>
+      <%= form_with model: @user do |f| %>
         <div class="w3-row-padding" style="margin:0 -16px;">
           <div class="w3-half w3-margin-bottom ">
             <label><i class=><%= f.label :username %></i></label>
-            <input class="w3-input w3-border w3-round w3-card " <%= f.text_field :username %>
+            <%= f.text_field :username, placeholder: "Username", class:"w3-input w3-border w3-round w3-card"%>
           </div>
           <div class="w3-half">
             <label><i class=><%= f.label :email %></i></label>   
-            <input class="w3-input w3-border w3-round w3-card" <%= f.text_field :email %>
+            <%= f.text_field :email, placeholder: "example@email.com", class:"w3-input w3-border w3-round w3-card" %>
           </div>
           <div class="w3-half w3-margin-bottom">
             <label><i class=><%= f.label :password %></i></label>   
-            <input class="w3-input w3-border w3-round w3-card" <%= f.password_field :password %>
+            <%= f.password_field :password, placeholder: "Password", class:"w3-input w3-border w3-round w3-card" %>
           </div>
           <div class="w3-row-padding" style="margin:-15px -16px;">
             <div class="w3-half w3-margin-bottom">

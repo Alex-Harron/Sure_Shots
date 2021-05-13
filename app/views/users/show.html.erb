@@ -1,4 +1,5 @@
 <body>
+<% if @user == current_user %>
 <div class="w3-container w3-sand w3-round w3-card">
 <center><h1><img src="https://www.launchpads.com.au/assets/css/icons/animated/diamond/animat-diamond.gif" style="width:100px;height:90px;">Welcome to Your Bet History <%= @user.username %> <img src="https://www.launchpads.com.au/assets/css/icons/animated/diamond/animat-diamond.gif" style="width:100px;height:90px;"></h1></center>
 </div>
@@ -11,11 +12,11 @@
       <div class="w3-container w3-black w3-round w3-card">
         <center><h3>All Your Bets So Far...</h3></center>
         <h6 class="w3-opacity">
-        <% if @user %>
           <h4><%= render partial: "user", locals: {user: current_user} %></h4>
         <% else %> 
-          <center><h3>This User's Page is Private or Does not Exist</h3>
-          <p><%= link_to "Return to Homepage", root_path  %></i></p>
+        <div class="w3-container w3-black w3-round w3-card">
+        <center><h3>This User's Page is Private or Does not Exist</h3></center>
+        </div>
         <% end %>
         <button class="w3-button w3-block w3-green w3-margin-bottom w3-round w3-card"><%= link_to "Return to Homepage", root_path  %></button>
       </div>
@@ -27,6 +28,6 @@
 body {
   background-image: url('https://i.pinimg.com/originals/dc/be/37/dcbe3700061927a7489bc184546f57bb.png');
   background-attachment: fixed;
-   background-position: center; 
+  background-position: center; 
 }
 </style>
