@@ -11,10 +11,10 @@
           <%end%>
         <%end%>
         <%= form_with model: ([@game, @bet]) do |f| %>
-          <%= f.number_field :amount, placeholder: "Amount$$$", class:"w3-container w3-round w3-card" %>
+          <%= f.number_field :amount, placeholder: "Amount$$", class:"w3-container w3-round w3-card" %>
           <select class=" w3-border w3-round w3-card"<%= f.select :winner, ["#{@game.home}", "#{@game.visitor}"], :selected => f.object.winner %>
           <br><br>
-          <input class="w3-button w3-input w3-border w3-round w3-card w3-green"<%= f.submit 'Place Bet' %> 
+          <%= f.submit 'Place Bet', class:"w3-button w3-input w3-border w3-round w3-card w3-green" %> 
         <% end %> 
         <p></p>
         <button class="w3-button w3-block w3-green w3-margin-bottom w3-round w3-card"><%= link_to "Return to Homepage", root_path  %></button>
