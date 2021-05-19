@@ -22,7 +22,6 @@ class BetsController < ApplicationController
 
     def create
         if params[:game_id]
-            current_game
             @bet = @game.bets.build(bet_params)
             @bet.user_id = session[:user_id]
         else
@@ -32,22 +31,8 @@ class BetsController < ApplicationController
         if @bet.save
             redirect_to game_bets_path
         else 
-            
             render :new
         end
-    end
-
-    def update
-        if @bet.update(bet_params)
-            redirect_to bet_path(@bet)
-        else
-            render :edit
-        end
-    end
-
-    def destroy
-        @bet.destroy
-        redirect_to game_bets_path
     end
 
     private

@@ -15,14 +15,12 @@
             <li>$ <%= b.amount %> - <b><%= b.winner %></b> - <%= b.user.username %> </li>
         <% end %></h6>
         <% else %> 
-            <h4><center><b>Be the First to Bet on this Game </b></center></h4>
+            <h4><center><b>Be the First to Bet on this Game! </b></center></h4>
         <% end %>
         <br>
-        <p><% if logged_in? %>
         <%= link_to "Return to Game Overview", game_path(@game) %>
         <br>
         <%= link_to "Return to Homepage", root_path  %>
-    <% end %></p>
         <button class="w3-button w3-block w3-green w3-margin-bottom w3-round w3-card"><%= link_to "Place a New Bet!", new_game_bet_path  %></button>
       </div>
     </div>

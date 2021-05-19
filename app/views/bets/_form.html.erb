@@ -5,24 +5,33 @@
     <div class="w3-third w3-margin-bottom">
       <div class="w3-container w3-black w3-round w3-card">
         <center><h3>Place Bet</h3></center>
+      </div>
         <% if @bet.errors.any? %>
           <% @bet.errors.full_messages.each do |e|%>
-          <div class="w3-red w3-round w3-card"><center><%= e %></center></div>
+          <div class="w3-container w3-red w3-round w3-card"><center><%= e %></center></div>
           <%end%>
         <%end%>
-        <%= form_with model: ([@game, @bet]) do |f| %>
-          <%= f.number_field :amount, placeholder: "Amount$$", class:"w3-container w3-round w3-card" %>
-          <select class=" w3-border w3-round w3-card"<%= f.select :winner, ["#{@game.home}", "#{@game.visitor}"], :selected => f.object.winner %>
-          <br><br>
-          <%= f.submit 'Place Bet', class:"w3-button w3-input w3-border w3-round w3-card w3-green" %> 
-        <% end %> 
-        <p></p>
-        <button class="w3-button w3-block w3-green w3-margin-bottom w3-round w3-card"><%= link_to "Return to Homepage", root_path  %></button>
+        <div class="w3-container w3-light-grey w3-padding-16 w3-round w3-card">
+          <%= form_with model: ([@game, @bet]) do |f| %>
+          <div class="w3-row-padding" style="margin:0 -16px;">
+            <div class="w3-half w3-margin-bottom ">
+              <%= f.number_field :amount, placeholder: "Amount$$", class:"w3-container w3-round w3-card" %>
+            </div>
+            <div class="w3-half w3-margin-bottom ">
+              <%= f.select :winner, ["#{@game.home}", "#{@game.visitor}"], :selected => f.object.winner, class:"w3-border w3-round w3-card"%>
+            </div>
+            <br><br>
+            <%= f.submit 'Place Bet', class:"w3-button w3-input w3-border w3-round w3-card w3-green" %> 
+          <% end %> 
+          <p></p>
+          <button class="w3-button w3-block w3-green w3-margin-bottom w3-round w3-card"><%= link_to "Return to Homepage", root_path  %></button>
+          </div>
+        </div>
       </div>
+    </div>
     </div>
     <div class="w3-third w3-margin-bottom">
       <center><img src="https://media2.giphy.com/media/lnxeDr5sJQ6x5fvjPA/giphy.gif?cid=6c09b952m38flw98ququtudxtlv5ho27rh3ao1iywtz3txw2&rid=giphy.gif" style="width:80%"></center>
     </div>
-    </div>
   </div>
-  
+</div>

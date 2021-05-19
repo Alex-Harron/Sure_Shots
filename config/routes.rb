@@ -7,15 +7,12 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   post '/games', to: 'games#index'
-  
 
   get '/auth/:provider/callback' => 'sessions#omniauth'
 
-  resources :users
+  resources :users #index, show, new, edit, create, update, and destroy
 
-  resources :bets, only: [:index, :new, :create]
   resources :games, only: [:show, :index] do 
     resources :bets
   end
-  
 end

@@ -12,7 +12,7 @@
       <div class="w3-container w3-black w3-round w3-card">
         <center><h3>All Your Bets So Far...</h3></center>
         <h6 class="w3-opacity">
-          <h4><%= render partial: "user", locals: {user: current_user} %></h4>
+          <h4><%= render partial: "user", locals: {user: @user} %></h4>
         <% else %> 
         <div class="w3-container w3-black w3-round w3-card">
         <center><h3>This User's Page is Private or Does not Exist</h3></center>
