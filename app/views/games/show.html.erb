@@ -6,7 +6,7 @@
     <%= render partial: "game", locals: {game: @game} %>
 
     <center><%= link_to 'See all the current bets on this Game', game_bets_path(@game), class:"w3-button w3-green w3-container w3-round w3-card" %>
-    <h3><center><%= button_to "Return to All Games" , games_path, class:"w3-button w3-black w3-container w3-round w3-card" %></h3>
+    <h3><center><%= link_to "Return to All Games" , games_path, class:"w3-button w3-black w3-container w3-round w3-card" %></h3>
 <% else %>
     <center><h2>404</h2><h3>Game Not Found</h3>
     <h3><center><%= button_to "Return to All Games" , games_path, class:"w3-button w3-black w3-container w3-round w3-card" %></h3>

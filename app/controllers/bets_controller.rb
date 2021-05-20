@@ -22,6 +22,7 @@ class BetsController < ApplicationController
 
     def create
         if params[:game_id]
+            current_game
             @bet = @game.bets.build(bet_params)
             @bet.user_id = session[:user_id]
         else
