@@ -2,30 +2,29 @@
 <br><br> 
 <br><br> 
 <div class="w3-row-padding w3-padding-16 ">
-    <div class="w3-third w3-margin-bottom">
+  <div class="w3-third w3-margin-bottom">
     <center><img src="<%= @game.visitor_img %>" style="width:60%"></center>
-    </div>
-    <div class="w3-third w3-margin-bottom">
+  </div>
+  <div class="w3-third w3-margin-bottom">
     <center><img src="https://media1.giphy.com/media/TiJfX5nRSnvshdijyb/giphy.gif" style="width:20%"></center>
-      <div class="w3-container w3-black w3-round w3-card" >
-        <center><h3><%= @game.name %></h3></center>
-        <% if @game.bets.exists? %>
+    <div class="w3-container w3-black w3-round w3-card" >
+      <center><h3><%= @game.name %></h3></center>
+      <% if @game.bets.exists? %>
         <h6 class="w3-opacity">
         <% @bets.each do |b| %>
-            <li>$ <%= b.amount %> - <b><%= b.winner %></b> - <%= b.user.username %> </li>
+          <li>$ <%= b.amount %> - <b><%= b.winner %></b> - <%= b.user.username %> </li>
         <% end %></h6>
-        <% else %> 
-            <h4><center><b>Be the First to Bet on this Game! </b></center></h4>
-        <% end %>
-        <br>
-        <%= link_to "Return to Game Overview", game_path(@game) %>
-        <br>
-        <%= link_to "Return to Homepage", root_path  %>
-        <button class="w3-button w3-block w3-green w3-margin-bottom w3-round w3-card"><%= link_to "Place a New Bet!", new_game_bet_path  %></button>
-      </div>
+      <% else %> 
+        <h4><center><b>Be the First to Bet on this Game! </b></center></h4>
+      <% end %>
+      <br>
+      <%= link_to "Return to Game Overview", game_path(@game) %>
+      <br>
+      <%= link_to "Return to Homepage", root_path  %>
+      <button class="w3-button w3-block w3-green w3-margin-bottom w3-round w3-card"><%= link_to "Place a New Bet!", new_game_bet_path  %></button>
     </div>
-    <div class="w3-third w3-margin-bottom">
+  </div>
+  <div class="w3-third w3-margin-bottom">
     <center><img src="<%= @game.home_img %>" style="width:60%"></center>
-    </div>
   </div>
 </div>

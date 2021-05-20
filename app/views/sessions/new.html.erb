@@ -1,20 +1,19 @@
 <body>
-<div class="w3-bar w3-green w3-large w3-round we-card">
-<center><h1><img src="https://www.launchpads.com.au/assets/css/icons/animated/diamond/animat-diamond.gif" style="width:100px;height:90px;">Welcome to Sure Shots! The #1 NBA Betting Site<img src="https://www.launchpads.com.au/assets/css/icons/animated/diamond/animat-diamond.gif" style="width:100px;height:90px;"></h1></center>
-</div>
-<br><br>
-<br><br>
-<header class="w3-display-container w3-content w3-round w3-card" style="max-width:800px;">
-    <center><div class="w3-display-left w3-padding w3-col l6 m8 "></center>
-        <div class="w3-container w3-black w3-round w3-card">
-            <center><h2>Members Sign In Here:</h2></center>
-        </div>
-        <% @errors && @errors.each do |e|%>
-            <div class="w3-red w3-round w3-card"><center><%= e %></center></div>
+    <div class="w3-bar w3-green w3-large w3-round we-card">
+        <center><h1><img src="https://www.launchpads.com.au/assets/css/icons/animated/diamond/animat-diamond.gif" style="width:100px;height:90px;">Welcome to Sure Shots! The #1 NBA Betting Site<img src="https://www.launchpads.com.au/assets/css/icons/animated/diamond/animat-diamond.gif" style="width:100px;height:90px;"></h1></center>
+    </div>
+    <br><br>
+    <br><br>
+    <header class="w3-display-container w3-content w3-round w3-card" style="max-width:800px;">
+        <center><div class="w3-display-left w3-padding w3-col l6 m8 "></center>
+            <div class="w3-container w3-black w3-round w3-card">
+                <center><h2>Members Sign In Here:</h2></center>
+            </div>
+            <% @errors && @errors.each do |e|%>
+                <div class="w3-red w3-round w3-card"><center><%= e %></center></div>
             <%end%>
-        <div class="w3-container w3-light-grey w3-padding-16">
-        
-            <%= form_with url: login_path do |f| %>
+            <div class="w3-container w3-light-grey w3-padding-16">
+                <%= form_with url: login_path do |f| %>
                 <div class="w3-row-padding" style="margin:0 -16px;">
                     <div class="w3-half w3-margin-bottom">
                         <label><i class=><%= f.label :username %></i></label>
@@ -34,43 +33,41 @@
                     <br><br>
                     Not a member yet? <b><%= link_to "Create Account", signup_path %></b>
                 </div>
-            <% end %>
-            <div class="separator"> Or </div>
-            <br>
-            <h3><center><%= button_to "Continue with Google" , '/auth/google_oauth2', class:"w3-button w3-red w3-container w3-round w3-card" %></h3>
+                <% end %>
+                <div class="separator"> Or </div>
+                    <br>
+                    <h3><center><%= button_to "Continue with Google" , '/auth/google_oauth2', class:"w3-button w3-red w3-container w3-round w3-card" %></h3>
+                </div>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 </body>
-
-
-
 
 
 <style>
 .separator {
-  display: flex;
-  align-items: center;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .separator::before,
 .separator::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid grey;
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid grey;
 }
 
 .separator:not(:empty)::before {
-  margin-right: .25em;
+    margin-right: .25em;
 }
 
 .separator:not(:empty)::after {
-  margin-left: .25em;
+    margin-left: .25em;
 }
 body {
-  background-image: url('https://www.pngkey.com/png/full/390-3907778_related-keywords-suggestions-for-nba-logos-all-nba.png');
-  background-attachment: fixed;
-   background-position: center; 
+    background-image: url('https://www.pngkey.com/png/full/390-3907778_related-keywords-suggestions-for-nba-logos-all-nba.png');
+    background-attachment: fixed;
+    background-position: center; 
 }
 </style>

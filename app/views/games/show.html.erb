@@ -1,10 +1,7 @@
-
 <% if @game %>
     <center><h1><img src="https://www.launchpads.com.au/assets/css/icons/animated/diamond/animat-diamond.gif" style="width:100px;height:90px;">Place Your Bets and Win Big!!<img src="https://www.launchpads.com.au/assets/css/icons/animated/diamond/animat-diamond.gif" style="width:100px;height:90px;"></h1></center>
     <center><h2> <b><%= @game.name %></b></h1></center>
-
     <%= render partial: "game", locals: {game: @game} %>
-
     <center><%= link_to 'See all the current bets on this Game', game_bets_path(@game), class:"w3-button w3-green w3-container w3-round w3-card" %>
     <h3><center><%= link_to "Return to All Games" , games_path, class:"w3-button w3-black w3-container w3-round w3-card" %></h3>
 <% else %>
