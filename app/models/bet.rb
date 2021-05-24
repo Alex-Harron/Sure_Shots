@@ -3,6 +3,6 @@ class Bet < ApplicationRecord
     belongs_to :game, optional: true
 
     validates :amount, presence: true
-    
-
 end
+
+

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
+  get '/games/new', to: 'games#new'
+  post '/games', to: 'games#create'
+
   get '/auth/:provider/callback' => 'sessions#omniauth'
 
   resources :users #index, show, new, edit, create, update, and destroy

@@ -4,7 +4,7 @@ class BetsController < ApplicationController
 
     def index
         if params[:game_id] && current_game
-            @bets = @game.bets
+            @bets = @game.bets.desc
         else
             render :index
         end
@@ -46,3 +46,9 @@ class BetsController < ApplicationController
         @game = Game.find_by(id: params[:game_id])
     end
 end
+
+
+<%= form_tag(coupons_path method: :get) do %>
+    Store <%= text_field_tag :store, params[:store] %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %>

@@ -4,3 +4,5 @@ class Game < ApplicationRecord
 
     scope :abc, -> {order('name')}
 end
+
+
