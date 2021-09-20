@@ -26,7 +26,7 @@ The Account section shows the users account username and a list of bets they hav
 
 
 <h2>Prerequisites</h2>
-This web application was mainly written with the Ruby language and uses several gems. Below is an installation guide to help you install the nessesarry gems.
+This web application was mainly written with the Ruby language and uses several gems. Below is an installation guide to help you install the necessary gems.
 
 
 
