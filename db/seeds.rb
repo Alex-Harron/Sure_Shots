@@ -12,4 +12,3 @@ Game.create(name: 'Hornets V Bucks', home: 'Hornets', visitor: 'Bucks', home_img
 Game.create(name: 'Lakers V Warriors', home: 'Lakers', visitor: 'Warriors', home_img: 'https://media2.giphy.com/media/XgMuTwj2mIfEb2IZcK/giphy.gif', visitor_img: 'https://media3.giphy.com/media/3o7budlynEJy4aMOre/giphy.gif')
 Game.create(name: 'Nets V Rockets', home: 'Nets', visitor: 'Rockets', home_img: 'https://media4.giphy.com/media/l1J9r8h5KUdDDLAJO/giphy.gif', visitor_img: 'https://media0.giphy.com/media/TL1R0S7XkpN8DKY2dl/200.gif?cid=ecf05e47yl405m1sz1ezpedcoxjwp2l4u2lph1mpmdntayb1&rid=200.gif')
 Game.create(name: 'Wizards V Suns', home: 'Wizards', visitor: 'Suns', home_img: 'https://media4.giphy.com/media/3ohhwKWrdg3LDFMP7i/giphy.gif', visitor_img: 'https://media0.giphy.com/media/l1J9MDXvL4gkebHyg/source.gif')
-
