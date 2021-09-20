@@ -1,3 +1,5 @@
+<h1>Welcome to Sure Shots!</h1>
+
 Bet your money on a team and get ready to win big!
 
 The homepage allows the user to signup or login through the web application's authentication and database or through GitHub's authentication system.
