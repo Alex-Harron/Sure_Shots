@@ -16,9 +16,11 @@ There is a list of NBA games available for the user to browse through.
 
 Users can bet a custom amout of money on a game of their choice.
 
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/74021683/134064946-6347e313-38c4-4424-a744-926385c55343.gif)
 
 The Account section shows the users account username and a list of bets they have made with the amount they bet and who they chose to win.
 
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/74021683/134065048-d1d1a0a2-8a0a-4e81-be76-50f828bde6db.gif)
 
 
 <h2>Prerequisites</h2>
